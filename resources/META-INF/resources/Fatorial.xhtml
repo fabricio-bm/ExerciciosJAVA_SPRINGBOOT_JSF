@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-us"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Fatorial</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header='Fatorial'>
+
+            <h:panelGrid columns="2" id="pnlcampos">
+                <p:outputLabel value="Digite o número que será fatoriado:"/>
+
+                <p:inputText id="txt1" value="#{fatorialBean.x}" />
+
+                <p:outputLabel value="Valor fatorial é:" />
+                <p:inputText id="txt2" value="#{fatorialBean.f}" disabled="true" />
+
+
+            </h:panelGrid>
+
+            <h:panelGrid columns="1">
+                <p:commandButton id="txtcalcular" value = "Calcular" actionListener="#{fatorialBean.Calcular()}" update="txt2"/>
+            </h:panelGrid>
+        </p:panel>
+    </h:form>
+</h:body>
+
+</html>

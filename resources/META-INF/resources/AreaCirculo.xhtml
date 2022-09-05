@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-us"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Calcúlo da área de um circulo</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="Calcule a área de um círculo">
+
+            <h:panelGrid columns="2" id="pnlcampos">
+                <p:outputLabel value="Digite o valor do raio"/>
+
+                <p:inputText id="txtm" value="#{areaCirculoBean.raio}" />
+
+                <p:outputLabel value="A área do circulo em cm^2 é:" />
+                <p:inputText id="txtm2" value="#{areaCirculoBean.área}"  />
+
+
+
+            </h:panelGrid>
+
+            <h:panelGrid columns="1">
+                <p:commandButton id="txtcalcular" value = "Calcular" actionListener="#{areaCirculoBean.Calcular()}" update="txtm txtm2"/>
+            </h:panelGrid>
+        </p:panel>
+    </h:form>
+</h:body>
+
+</html>

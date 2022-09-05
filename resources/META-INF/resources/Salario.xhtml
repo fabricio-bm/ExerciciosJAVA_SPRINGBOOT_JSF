@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-us"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Cálculo do salário líquido</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="Calcule seu salário">
+
+            <h:panelGrid columns="2" id="pnlcampos">
+                <p:outputLabel value="Digite quanto você ganha por hora"/>
+
+                <p:inputText id="txt" value="#{salarioBean.horastrabalhadas}" />
+
+                <p:outputLabel value="Digite o número de horas trabalhadas no mês:" />
+                <p:inputText id="txt2" value="#{salarioBean.horastrabalhadas}"  />
+
+                <p:outputLabel value="Valor pago para o Inss é de:" />
+                <p:inputText id="txt3" disabled="true" value="#{salarioBean.inss}"  />
+
+                <p:outputLabel value="Valor pago ao Imposto de renda:" />
+                <p:inputText id="txt4" disabled="true" value="#{salarioBean.ir}"  />
+
+                <p:outputLabel value="Valor pago ao Sindicato:" />
+                <p:inputText id="txt5" disabled="true" value="#{salarioBean.desc}"  />
+
+                <p:outputLabel value="Salário liquido de:" />
+                <p:inputText id="txt6" disabled="true" value="#{salarioBean.salarioLiquido}"  />
+            </h:panelGrid>
+
+            <h:panelGrid columns="1">
+                <p:commandButton id="txtcalcular" value = "Calcular" actionListener="#{salarioBean.Calcular()}" update="txt txt2
+txt3 txt4 txt5 txt6"/>
+            </h:panelGrid>
+        </p:panel>
+    </h:form>
+</h:body>
+
+</html>

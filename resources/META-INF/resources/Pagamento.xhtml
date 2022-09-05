@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-us"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Descubra seu aumento salarial!</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="Exercício 12">
+
+            <h:panelGrid columns="2" id="pnlcampos">
+                <p:outputLabel value="Digite qual seu ganho por hora:"/>
+
+                <p:inputText id="txt1" value="#{pagamentoBean.valorhora}" />
+
+                <p:outputLabel value="Digite quantas horas você trabalha:" />
+                <p:inputText id="txt2" value="#{pagamentoBean.qtdhoras}" />
+
+                <p:outputLabel value="Salário bruto:"  />
+                <p:inputText id="txt3" value="#{pagamentoBean.salariobruto}" disabled="true"/>
+
+                <p:outputLabel value="Imposto de renda:" />
+                <p:inputText id="txt4" value="#{pagamentoBean.ir}" disabled="true"  />
+
+                <p:outputLabel value="FGTS (11%):" />
+                <p:inputText id="txt5" value="#{pagamentoBean.fgts}" disabled="true"  />
+
+                <p:outputLabel value="Total de descontos:" />
+                <p:inputText id="txt6" value="#{pagamentoBean.totaldesc}" disabled="true"  />
+
+                <p:outputLabel value="Salário Líquido:" />
+                <p:inputText id="txt7" value="#{pagamentoBean.salarioliquido}" disabled="true"  />
+            </h:panelGrid>
+
+            <h:panelGrid columns="1">
+                <p:commandButton value="Calcular" actionListener="#{mediaSemestreBean.Calcular()}" update="txt7" />
+            </h:panelGrid>
+        </p:panel>
+    </h:form>
+</h:body>
+
+</html>

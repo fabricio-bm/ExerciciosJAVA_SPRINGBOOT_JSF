@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-us"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Saiba se o número é positivo, negativo ou igual a 0</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="Positivo,negativo,igual a 0">
+
+            <h:panelGrid columns="2" id="pnlcampos">
+                <p:outputLabel value="Digite o número:"/>
+
+                <p:inputText id="txt1" value="#{positivoNegativoBean.numero}" />
+
+                <p:outputLabel value="O número é:" />
+                <p:inputText id="txt2" disabled="true" value="#{positivoNegativoBean.status}"  />
+            </h:panelGrid>
+
+            <h:panelGrid columns="1">
+                <p:commandButton id="txtcalcular" value = "Calcular" actionListener="#{positivoNegativoBean.Calcular()}" update="txt1 txt2"/>
+            </h:panelGrid>
+        </p:panel>
+    </h:form>
+</h:body>
+
+</html>

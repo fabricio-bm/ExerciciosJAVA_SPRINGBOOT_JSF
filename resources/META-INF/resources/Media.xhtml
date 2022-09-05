@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-us"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Saiba se você foi aprovado, reprovado ou está de exame</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="Aprovado, reprovado ou exame!">
+
+            <h:panelGrid columns="2" id="pnlcampos">
+                <p:outputLabel value="Digite a sua primeira média"/>
+
+                <p:inputText id="txt1" value="#{mediaBean.m1}" />
+
+                <p:outputLabel value="Digite a sua segunda média:" />
+                <p:inputText id="txt2" value="#{mediaBean.m2}"  />
+
+                <p:outputLabel value="Seu status é:" />
+                <p:inputText id="txt3" value="#{mediaBean.status}" disabled="true"  />
+
+            </h:panelGrid>
+
+            <h:panelGrid columns="1">
+                <p:commandButton value="Calcular" actionListener="#{mediaBean.calcular()}" update="txt3" />
+            </h:panelGrid>
+        </p:panel>
+    </h:form>
+</h:body>
+
+</html>
